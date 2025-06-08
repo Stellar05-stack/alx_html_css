@@ -3,6 +3,9 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+  background-color: skyblue;
+  font-family: Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 main {
@@ -21,37 +24,3 @@ aside {
   overflow-y: auto;
 }
 
-input[type="text"] {
-  width: 70%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  margin-left: 0.5rem;
-  cursor: pointer;
-  background-color: white;
-  border: 1px solid #333;
-  border-radius: 4px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin: 0.5rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-li button {
-  background-color: #f00;
-  color: white;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
