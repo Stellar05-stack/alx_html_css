@@ -1,0 +1,134 @@
+.banner {
+  background-image: url("images/Object.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background-image: url('images/Object.png');
+  background-position: center;
+}
+
+header {
+  position: relative;
+  height: 100vh;
+  background-image: url('images/Object.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.banner-content h1 {
+  font-size: 120px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  font-family: Source Sans Pro, sans-serif;
+
+}
+
+.subtitle span {
+  margin: 0 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: Source Sans Pro;
+
+
+}
+
+.banner-content button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  background-color: #c271ff;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+
+/* Pros Section */
+
+.pros-content {
+  margin-top: 100px;
+  color: black;
+}
+
+.pros-content h2 {
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.purple {
+  color: #c271ff;
+  font-weight: bold;
+}
+
+.pros-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.pro-card {
+  max-width: 180px;
+  text-align: center;
+}
+
+.pro-card img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  height: 100px;
+}
+
+.pro-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.pro-card p {
+  font-size: 14px;
+  color: #eee;
+}
