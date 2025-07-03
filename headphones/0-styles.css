@@ -1,0 +1,325 @@
+
+
+/* ==========================================================================
+   CSS RESET
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   CSS VARIABLES
+   ========================================================================== */
+:root {
+  /* Colors */
+  --primary-color: #FF6565;
+  --white: #FFFFFF;
+  --black: #000000;
+  --dark: #333333;
+  
+  /* Typography */
+  --font-family: 'Source Sans Pro', sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Layout */
+  --max-width: 1000px;
+  --mobile-breakpoint: 480px;
+  
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+  
+  /* Transitions */
+  --transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   GENERIC COMPONENTS
+   ========================================================================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+              url('images/headphones_hero_1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
+.header__logo img {
+  height: 32px;
+  width: auto;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.header__nav-list a {
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+  color: var(--white);
+  text-transform: lowercase;
+  transition: var(--transition);
+}
+
+.header__nav-list a:hover,
+.header__nav-list a:active {
+  color: var(--primary-color);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 20px;
+  height: 15px;
+  justify-content: space-between;
+}
+
+.mobile-menu span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  transition: var(--transition);
+}
+
+.menu-toggle:checked + .mobile-menu span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle:checked + .mobile-menu span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle:checked + .mobile-menu span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ==========================================================================
+   HERO COMPONENT
+   ========================================================================== */
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl) 0;
+}
+
+.hero__container {
+  text-align: center;
+  max-width: 700px;
+}
+
+.hero__title {
+  font-size: 46px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-xs);
+  color: var(--white);
+}
+
+.hero__subtitle {
+  font-size: 18px;
+  font-weight: var(--font-weight-normal);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-xl);
+  color: var(--white);
+}
+
+.hero__cta {
+  display: inline-block;
+  padding: 13px 31px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 22px;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero__cta:hover,
+.hero__cta:active {
+  opacity: 0.9;
+}
+
+.hero__description {
+  font-size: 16px;
+  font-weight: var(--font-weight-normal);
+  line-height: 1.625;
+  max-width: 637px;
+  margin: 0 auto;
+  color: var(--white);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE - 480px and below
+   ========================================================================== */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .header__container {
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .header__nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    padding: var(--spacing-lg) 0;
+    gap: var(--spacing-md);
+  }
+
+  .menu-toggle:checked ~ .header__nav-list {
+    display: flex;
+  }
+
+  .header__nav-list li {
+    text-align: center;
+  }
+
+  .header__nav-list a {
+    font-size: 14px;
+    padding: var(--spacing-sm);
+  }
+
+  .hero {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .hero__title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero__subtitle {
+    font-size: 16px;
+  }
+
+  .hero__description {
+    font-size: 16px;
+    line-height: 1.625;
+  }
+
+  .header__logo img {
+    height: 24px;
+  }
+}
+
+/* ==========================================================================
+   TABLET RESPONSIVE - 481px to 768px
+   ========================================================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero__title {
+    font-size: 36px;
+  }
+
+  .header__nav-list {
+    gap: var(--spacing-md);
+  }
+}
+
+/* ==========================================================================
+   DESKTOP RESPONSIVE - 769px and above
+   ========================================================================== */
+@media (min-width: 769px) {
+  .hero__title {
+    font-size: 46px;
+    line-height: 1.2;
+  }
+
+  .hero__subtitle {
+    font-size: 18px;
+  }
+
+  .hero__container {
+    max-width: 700px;
+  }
+
+  .hero__description {
+    max-width: 637px;
+  }
+}
